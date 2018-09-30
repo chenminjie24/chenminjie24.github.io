@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenminjie.com">
-  <title>Flask源码阅读——启动应用 | 陈敏杰的博客</title>
+  <title>Archives: 2018/9 | 陈敏杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="工作中经常会用到Flask，所以决定阅读一下Flask的源码。第一次阅读web框架的源码，如有错误，烦请告知。 12345678910111213from flask import Flaskapp = Flask(__name__)@app.route(&quot;/&quot;)def hello():    return &quot;Hello World!&quot;if __name__ == &quot;__main__&quot;:">
-<meta name="keywords" content="Python,Flask">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Flask源码阅读——启动应用">
-<meta property="og:url" content="http://chenminjie.com/2017/06/21/how-does-flask-start-service/index.html">
+  <meta name="description" content="编程">
+<meta name="keywords" content="Python,开发者,机器学习,代码,编程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="陈敏杰的博客">
+<meta property="og:url" content="http://chenminjie.com/archives/2018/09/index.html">
 <meta property="og:site_name" content="陈敏杰的博客">
-<meta property="og:description" content="工作中经常会用到Flask，所以决定阅读一下Flask的源码。第一次阅读web框架的源码，如有错误，烦请告知。 12345678910111213from flask import Flaskapp = Flask(__name__)@app.route(&quot;/&quot;)def hello():    return &quot;Hello World!&quot;if __name__ == &quot;__main__&quot;:">
+<meta property="og:description" content="编程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-13T03:27:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flask源码阅读——启动应用">
-<meta name="twitter:description" content="工作中经常会用到Flask，所以决定阅读一下Flask的源码。第一次阅读web框架的源码，如有错误，烦请告知。 12345678910111213from flask import Flaskapp = Flask(__name__)@app.route(&quot;/&quot;)def hello():    return &quot;Hello World!&quot;if __name__ == &quot;__main__&quot;:">
+<meta name="twitter:title" content="陈敏杰的博客">
+<meta name="twitter:description" content="编程">
   
     <link rel="alternative" href="/atom.xml" title="陈敏杰的博客" type="application/atom+xml">
   
@@ -178,190 +177,64 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-how-does-flask-start-service" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Flask源码阅读——启动应用
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/09/29/git-dns-spoofing-detected/" class="archive-article-date">
+  	<time datetime="2018-09-29T09:25:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/09/29/git-dns-spoofing-detected/">The RSA host key for xxx has changed</a>
     </h1>
   
 
-        
-        <a href="/2017/06/21/how-does-flask-start-service/" class="archive-article-date">
-  	<time datetime="2017-06-21T09:50:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  工作中经常会用到Flask，所以决定阅读一下Flask的源码。第一次阅读web框架的源码，如有错误，烦请告知。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</div><div class="line"></div><div class="line">app = Flask(__name__)</div><div class="line"></div><div class="line"><span class="meta">@app.route("/")</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="string">"Hello World!"</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line"></div><div class="line">    app.run()</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>这是官方文档给出的一个最小的应用，app.run()方法启动了这个应用，下面我们看一下run方法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, host=None, port=None, debug=None, **options)</span>:</span></div><div class="line">    <span class="keyword">from</span> werkzeug.serving <span class="keyword">import</span> run_simple</div><div class="line">    <span class="keyword">if</span> host <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        host = <span class="string">'127.0.0.1'</span></div><div class="line">    <span class="keyword">if</span> port <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        server_name = self.config[<span class="string">'SERVER_NAME'</span>]</div><div class="line">        <span class="keyword">if</span> server_name <span class="keyword">and</span> <span class="string">':'</span> <span class="keyword">in</span> server_name:</div><div class="line">            port = int(server_name.rsplit(<span class="string">':'</span>, <span class="number">1</span>)[<span class="number">1</span>])</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            port = <span class="number">5000</span></div><div class="line">    <span class="keyword">if</span> debug <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">        self.debug = bool(debug)</div><div class="line">    options.setdefault(<span class="string">'use_reloader'</span>, self.debug)</div><div class="line">    options.setdefault(<span class="string">'use_debugger'</span>, self.debug)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        run_simple(host, port, self, **options)</div><div class="line">    <span class="keyword">finally</span>:</div><div class="line">        self._got_first_request = <span class="keyword">False</span></div></pre></td></tr></table></figure>
-<p>上面方法删去了注释。<br>run方法调用了werkzeug.serving的run_simple方法在指定host(默认为127.0.0.1)和port(默认为5000)启动了一个WSGI server来监听请求。<br>run_simple方法的第三个参数将创建的Flask对象本身也传入了，是为了在请求过来时WSGI server来回调Flask的<strong>call</strong>方法来处理请求。</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>+1s<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixinpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Flask</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题处理</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://chenminjie.com/2017/06/21/how-does-flask-start-service/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/06/23/how-does-flask-handle-requests/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Flask源码阅读——请求处理
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -384,8 +257,8 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
