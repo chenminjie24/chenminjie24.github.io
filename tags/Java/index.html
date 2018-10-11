@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenminjie.com">
-  <title>在Pandas group中移动数据 | 陈敏杰的博客</title>
+  <title>Tag: Java | 陈敏杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间： 12345678910111213import pandas as pdinfo = &amp;#123;    &apos;user_id&apos;: [1, 1, 3, 2, 1, 2, 3],    &apos;login_timestamp&apos;">
-<meta name="keywords" content="Python,Pandas,工作笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="在Pandas group中移动数据">
-<meta property="og:url" content="http://chenminjie.com/2018/07/28/how-to-shift-in-group/index.html">
+  <meta name="description" content="编程">
+<meta name="keywords" content="Python,开发者,机器学习,代码,编程">
+<meta property="og:type" content="website">
+<meta property="og:title" content="陈敏杰的博客">
+<meta property="og:url" content="http://chenminjie.com/tags/Java/index.html">
 <meta property="og:site_name" content="陈敏杰的博客">
-<meta property="og:description" content="最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间： 12345678910111213import pandas as pdinfo = &amp;#123;    &apos;user_id&apos;: [1, 1, 3, 2, 1, 2, 3],    &apos;login_timestamp&apos;">
+<meta property="og:description" content="编程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://chenminjie.com/images/pandas_groupby_shift.png">
-<meta property="og:updated_time" content="2018-07-28T05:34:23.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Pandas group中移动数据">
-<meta name="twitter:description" content="最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间： 12345678910111213import pandas as pdinfo = &amp;#123;    &apos;user_id&apos;: [1, 1, 3, 2, 1, 2, 3],    &apos;login_timestamp&apos;">
-<meta name="twitter:image" content="http://chenminjie.com/images/pandas_groupby_shift.png">
+<meta name="twitter:title" content="陈敏杰的博客">
+<meta name="twitter:description" content="编程">
   
     <link rel="alternative" href="/atom.xml" title="陈敏杰的博客" type="application/atom+xml">
   
@@ -180,196 +177,64 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-how-to-shift-in-group" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      在Pandas group中移动数据
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/10/11/Java-List-add-UnsupportedOperationException/" class="archive-article-date">
+  	<time datetime="2018-10-11T09:11:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/10/11/Java-List-add-UnsupportedOperationException/">Java List.add() UnsupportedOperationException</a>
     </h1>
   
 
-        
-        <a href="/2018/07/28/how-to-shift-in-group/" class="archive-article-date">
-  	<time datetime="2018-07-28T04:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>  最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。<br>  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line">info = &#123;</div><div class="line">    <span class="string">'user_id'</span>: [<span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">    <span class="string">'login_timestamp'</span>: [<span class="number">1532753156</span>, <span class="number">1532723478</span>, <span class="number">1532641735</span>, <span class="number">1532742569</span>, <span class="number">1532729865</span>, <span class="number">1532727869</span>, <span class="number">1532825436</span>]</div><div class="line">&#125;</div><div class="line">data = pd.DataFrame(info)</div><div class="line">data = data.sort_values(by=<span class="string">'login_timestamp'</span>, ascending=<span class="keyword">True</span>, na_position=<span class="string">'first'</span>)</div><div class="line"><span class="comment"># 根据用户分组后移动数据得到用户的上一次登陆时间</span></div><div class="line">data[<span class="string">'previous_login_timestamp'</span>] = data.groupby(<span class="string">'user_id'</span>)[<span class="string">'login_timestamp'</span>].shift(<span class="number">1</span>)</div><div class="line"><span class="comment"># 得到与上一次登陆的时间差</span></div><div class="line">data[<span class="string">'diff'</span>] = data[<span class="string">'login_timestamp'</span>] - data[<span class="string">'previous_login_timestamp'</span>]</div><div class="line">print(data)</div></pre></td></tr></table></figure>
-<p>  最后输出结果为：<br>  <img src="/images/pandas_groupby_shift.png" alt=""></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>+1s<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixinpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工作笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题处理</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://chenminjie.com/2018/07/28/how-to-shift-in-group/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/09/29/git-dns-spoofing-detected/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          The RSA host key for xxx has changed
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/11/26/LeetCode-674-Longest-Continuous-Increasing-Subsequence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">674. Longest Continuous Increasing Subsequence</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -392,9 +257,9 @@ ga('send', 'pageview');
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

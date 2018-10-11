@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://chenminjie.com">
-  <title>在Pandas group中移动数据 | 陈敏杰的博客</title>
+  <title>Java List.add() UnsupportedOperationException | 陈敏杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间： 12345678910111213import pandas as pdinfo = &amp;#123;    &apos;user_id&apos;: [1, 1, 3, 2, 1, 2, 3],    &apos;login_timestamp&apos;">
-<meta name="keywords" content="Python,Pandas,工作笔记">
+  <meta name="description" content="用 Java 写了一个接口,调用的时候发现调用 List.add() 方法报错Java List.add() UnsupportedOperationException,去查了下发现在 Java 里不是所有的 List 的实现都支持 add 方法,像 Arrays.asList() 返回的 List 不支持任何修改.  解决方法: 将该 List 转为可修改的 List 即可,如: examp">
+<meta name="keywords" content="Java,问题处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Pandas group中移动数据">
-<meta property="og:url" content="http://chenminjie.com/2018/07/28/how-to-shift-in-group/index.html">
+<meta property="og:title" content="Java List.add() UnsupportedOperationException">
+<meta property="og:url" content="http://chenminjie.com/2018/10/11/Java-List-add-UnsupportedOperationException/index.html">
 <meta property="og:site_name" content="陈敏杰的博客">
-<meta property="og:description" content="最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间： 12345678910111213import pandas as pdinfo = &amp;#123;    &apos;user_id&apos;: [1, 1, 3, 2, 1, 2, 3],    &apos;login_timestamp&apos;">
+<meta property="og:description" content="用 Java 写了一个接口,调用的时候发现调用 List.add() 方法报错Java List.add() UnsupportedOperationException,去查了下发现在 Java 里不是所有的 List 的实现都支持 add 方法,像 Arrays.asList() 返回的 List 不支持任何修改.  解决方法: 将该 List 转为可修改的 List 即可,如: examp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://chenminjie.com/images/pandas_groupby_shift.png">
-<meta property="og:updated_time" content="2018-07-28T05:34:23.641Z">
+<meta property="og:updated_time" content="2018-10-11T09:19:38.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Pandas group中移动数据">
-<meta name="twitter:description" content="最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间： 12345678910111213import pandas as pdinfo = &amp;#123;    &apos;user_id&apos;: [1, 1, 3, 2, 1, 2, 3],    &apos;login_timestamp&apos;">
-<meta name="twitter:image" content="http://chenminjie.com/images/pandas_groupby_shift.png">
+<meta name="twitter:title" content="Java List.add() UnsupportedOperationException">
+<meta name="twitter:description" content="用 Java 写了一个接口,调用的时候发现调用 List.add() 方法报错Java List.add() UnsupportedOperationException,去查了下发现在 Java 里不是所有的 List 的实现都支持 add 方法,像 Arrays.asList() 返回的 List 不支持任何修改.  解决方法: 将该 List 转为可修改的 List 即可,如: examp">
   
     <link rel="alternative" href="/atom.xml" title="陈敏杰的博客" type="application/atom+xml">
   
@@ -180,29 +178,27 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-how-to-shift-in-group" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java-List-add-UnsupportedOperationException" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      在Pandas group中移动数据
+      Java List.add() UnsupportedOperationException
     </h1>
   
 
         
-        <a href="/2018/07/28/how-to-shift-in-group/" class="archive-article-date">
-  	<time datetime="2018-07-28T04:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-28</time>
+        <a href="/2018/10/11/Java-List-add-UnsupportedOperationException/" class="archive-article-date">
+  	<time datetime="2018-10-11T09:11:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  最近在工作中分析数据用到了Pandas，有一批数据需要groupby后再shift数据进行计算。<br>  例如下列一批数据,我需要根据用户进行groupby，然后计算每次登陆的间隔时间：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line">info = &#123;</div><div class="line">    <span class="string">'user_id'</span>: [<span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">    <span class="string">'login_timestamp'</span>: [<span class="number">1532753156</span>, <span class="number">1532723478</span>, <span class="number">1532641735</span>, <span class="number">1532742569</span>, <span class="number">1532729865</span>, <span class="number">1532727869</span>, <span class="number">1532825436</span>]</div><div class="line">&#125;</div><div class="line">data = pd.DataFrame(info)</div><div class="line">data = data.sort_values(by=<span class="string">'login_timestamp'</span>, ascending=<span class="keyword">True</span>, na_position=<span class="string">'first'</span>)</div><div class="line"><span class="comment"># 根据用户分组后移动数据得到用户的上一次登陆时间</span></div><div class="line">data[<span class="string">'previous_login_timestamp'</span>] = data.groupby(<span class="string">'user_id'</span>)[<span class="string">'login_timestamp'</span>].shift(<span class="number">1</span>)</div><div class="line"><span class="comment"># 得到与上一次登陆的时间差</span></div><div class="line">data[<span class="string">'diff'</span>] = data[<span class="string">'login_timestamp'</span>] - data[<span class="string">'previous_login_timestamp'</span>]</div><div class="line">print(data)</div></pre></td></tr></table></figure>
-<p>  最后输出结果为：<br>  <img src="/images/pandas_groupby_shift.png" alt=""></p>
+        <p>  用 Java 写了一个接口,调用的时候发现调用 List.add() 方法报错Java List.add() UnsupportedOperationException,去查了下发现在 Java 里不是所有的 List 的实现都支持 add 方法,像 Arrays.asList() 返回的 List 不支持任何修改.<br>  解决方法: 将该 List 转为可修改的 List 即可,如: example = new ArrayList&lt;&gt;(example);</p>
 
       
 
@@ -247,15 +243,11 @@ ga('send', 'pageview');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工作笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题处理</a>
         		</li>
       		
 		</ul>
@@ -311,7 +303,7 @@ ga('send', 'pageview');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://chenminjie.com/2018/07/28/how-to-shift-in-group/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://chenminjie.com/2018/10/11/Java-List-add-UnsupportedOperationException/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +317,9 @@ ga('send', 'pageview');
   
 <nav id="article-nav">
   
-    <a href="/2018/09/29/git-dns-spoofing-detected/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          The RSA host key for xxx has changed
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/26/LeetCode-674-Longest-Continuous-Increasing-Subsequence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">674. Longest Continuous Increasing Subsequence</div>
+    <a href="/2018/09/29/git-dns-spoofing-detected/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">The RSA host key for xxx has changed</div>
       <i class="icon-circle-right"></i>
     </a>
   
