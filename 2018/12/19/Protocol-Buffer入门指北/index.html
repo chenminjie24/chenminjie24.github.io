@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Jave,学习笔记," />
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="编程">
-<meta name="keywords" content="Python,开发者,机器学习,代码,编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈敏杰的博客">
-<meta property="og:url" content="http://chenminjie.com/index.html">
+<meta name="description" content="最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:  JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致">
+<meta name="keywords" content="Jave,学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Protocol Buffer入门指北">
+<meta property="og:url" content="http://chenminjie.com/2018/12/19/Protocol-Buffer入门指北/index.html">
 <meta property="og:site_name" content="陈敏杰的博客">
-<meta property="og:description" content="编程">
+<meta property="og:description" content="最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:  JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-23T14:02:30.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈敏杰的博客">
-<meta name="twitter:description" content="编程">
+<meta name="twitter:title" content="Protocol Buffer入门指北">
+<meta name="twitter:description" content="最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:  JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenminjie.com/"/>
+  <link rel="canonical" href="http://chenminjie.com/2018/12/19/Protocol-Buffer入门指北/"/>
 
 
 
 
 
-  <title>陈敏杰的博客</title>
+  <title>Protocol Buffer入门指北 | 陈敏杰的博客</title>
   
 
 
@@ -164,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -281,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/19/Protocol-Buffer入门指北/" itemprop="url">Protocol Buffer入门指北</a></h1>
+          <h1 class="post-title" itemprop="name headline">Protocol Buffer入门指北</h1>
         
 
         <div class="post-meta">
@@ -333,9 +330,7 @@
       
 
       
-        
-          
-            <p>最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:</p>
+        <p>最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:</p>
 <ul>
 <li>JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致调用超时.</li>
 <li>JSON 结构比较占用存储空间,没有进行任何压缩,相对来说网络传输也会更耗时.<ul>
@@ -367,8 +362,6 @@
 <p>–java_out 指定编译后生成的文件所在的目录,最后指定你要编译的文件.</p>
 <h4 id="3-使用"><a href="#3-使用" class="headerlink" title="3.使用"></a>3.使用</h4><p>下面是根据上面的mq_message.proto文件生成的类的使用例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class TestPB &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        MQMessageProtos.Item item1 = MQMessageProtos.Item.newBuilder()</div><div class="line">                .setKey(&quot;1&quot;)</div><div class="line">                .putFields(&quot;field1&quot;, &quot;value1&quot;)</div><div class="line">                .putFields(&quot;field2&quot;, &quot;value2&quot;)</div><div class="line">                .build();</div><div class="line">        MQMessageProtos.Item item2 = MQMessageProtos.Item.newBuilder()</div><div class="line">                .setKey(&quot;2&quot;)</div><div class="line">                .putFields(&quot;field3&quot;, &quot;value3&quot;)</div><div class="line">                .putFields(&quot;field4&quot;, &quot;value4&quot;)</div><div class="line">                .build();</div><div class="line">        MQMessageProtos.MQMessage mqMessage = MQMessageProtos.MQMessage.newBuilder()</div><div class="line">                .setName(&quot;testName&quot;)</div><div class="line">                .setOperationType(MQMessageProtos.MQMessage.OperationType.UPDATE)</div><div class="line">                .addItems(item1)</div><div class="line">                .addItems(item2)</div><div class="line">                .build();</div><div class="line"></div><div class="line">        byte[] byteArray = mqMessage.toByteArray();</div><div class="line"></div><div class="line">        try &#123;</div><div class="line">            MQMessageProtos.MQMessage message = MQMessageProtos.MQMessage.parseFrom(byteArray);</div><div class="line">            System.out.println(message.getName());</div><div class="line">        &#125; catch (InvalidProtocolBufferException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
     
@@ -383,14 +376,22 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Jave/" rel="tag"># Jave</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -400,10 +401,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -411,6 +413,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -431,8 +437,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -485,6 +500,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-定义数据格式"><span class="nav-number">1.</span> <span class="nav-text">1.定义数据格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-根据-proto-文件生成类文件"><span class="nav-number">2.</span> <span class="nav-text">2.根据 .proto 文件生成类文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用"><span class="nav-number">3.</span> <span class="nav-text">3.使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -598,10 +629,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
