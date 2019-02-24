@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="陈敏杰的博客">
 <meta property="og:description" content="最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:  JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-23T14:11:36.028Z">
+<meta property="og:updated_time" content="2019-02-24T09:14:00.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Protocol Buffer入门指北">
 <meta name="twitter:description" content="最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:  JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致">
@@ -113,8 +113,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -211,6 +211,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -268,7 +278,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈敏杰">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/default_avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -310,6 +320,17 @@
 
           
           
+             <span id="/2018/12/19/Protocol-Buffer入门指北/" class="leancloud_visitors" data-flag-title="Protocol Buffer入门指北">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -333,10 +354,8 @@
         <p>最近在负责特征平台服务的开发,最初版本的特征数据存取是使用 JSON String,当时的考量是快速迭代上线,JSON 是个比较简单常用的数据交换格式.这样做在简单数据结构且对性能要求不高的时候是可行的,但是随着这个服务的调用量增大,对性能也有要求,这种做法就不太可行,碰到主要有以下问题:</p>
 <ul>
 <li>JSON String 在 parse 的时候很慢, 在调用量大的时候经常需要花费几十毫秒的时间,从而导致调用超时.</li>
-<li>JSON 结构比较占用存储空间,没有进行任何压缩,相对来说网络传输也会更耗时.<ul>
+<li>JSON 结构比较占用存储空间,没有进行任何压缩,相对来说网络传输也会更耗时.</li>
 <li>GC 问题</li>
-</ul>
-</li>
 </ul>
 <p>中间件团队建议使用Protocol Buffer,调研之后决定用 Protocol Buffer 来优化一下服务,下面简单介绍下它的使用方法,主要包含三个步骤:</p>
 <ol>
@@ -450,7 +469,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/default_avatar.png"
                alt="陈敏杰" />
           <p class="site-author-name" itemprop="name">陈敏杰</p>
            
@@ -548,7 +567,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
@@ -675,6 +694,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KvP5LbScewcVzD7hGnX3MaEt-gzGzoHsz", "h6AfMuA651kwcyhCbhleqsNM");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
