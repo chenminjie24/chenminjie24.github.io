@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Jave,学习笔记," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Jave,学习笔记,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenminjie.com/2018/12/19/Protocol-Buffer入门指北/"/>
+  <link rel="canonical" href="http://chenminjie.com/2018/12/19/Protocol-Buffer入门指北/">
 
 
 
 
 
-  <title>Protocol Buffer入门指北 | 陈敏杰的博客</title>
+  <title>Protocol Buffer入门指北 | 陈敏杰的博客</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -165,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -174,7 +174,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">陈敏杰的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -204,7 +204,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -214,7 +214,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -224,7 +224,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -234,7 +234,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -277,7 +277,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈敏杰">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/default_avatar.png">
     </span>
 
@@ -313,7 +313,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -381,18 +381,23 @@
 </ul>
 <p>中间件团队建议使用Protocol Buffer,调研之后决定用 Protocol Buffer 来优化一下服务,下面简单介绍下它的使用方法,主要包含三个步骤:</p>
 <ol>
-<li>在 <em>.proto</em> 文件中定义数据格式</li>
-<li>根据 <em>.proto</em> 文件生成类文件</li>
+<li><p>在 <em>.proto</em> 文件中定义数据格式</p>
+</li>
+<li><p>根据 <em>.proto</em> 文件生成类文件</p>
+</li>
 <li><p>使用</p>
 <a id="more"></a>
 <h4 id="定义数据格式"><a href="#定义数据格式" class="headerlink" title="定义数据格式"></a>定义数据格式</h4><p>新建一个以 <em>.proto</em> 结尾的文件,如新建 <em>mq_message.proto</em>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">// 指定使用哪个版本的语法,需要在第一行指定</div><div class="line">syntax = &quot;proto3&quot;;</div><div class="line"></div><div class="line">package example;</div><div class="line"></div><div class="line">// 指定 java_package, 不指定就使用 package.生成的类会放到该package下</div><div class="line">option java_package = &quot;com.example.example&quot;;</div><div class="line"></div><div class="line">// 生成的类名</div><div class="line">option java_outer_classname = &quot;MQMessageProtos&quot;;</div><div class="line"></div><div class="line">message MQMessage &#123;</div><div class="line">  // required 修饰的字段必须提供,否则 build 会抛 RuntimeException, parse 会抛 IOException. 后续扩展时 required 字段不可修改</div><div class="line"></div><div class="line">  // 声明一个枚举类型</div><div class="line">  enum OperationType &#123;</div><div class="line">    UPDATE = 0;</div><div class="line">    DELETE = 1;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  // 声明一个枚举类型的字段,等号后面的数字是标识数字</div><div class="line">  OperationType operationType = 1;</div><div class="line"></div><div class="line">  // 声明一个 string 类型的字段</div><div class="line">  string name = 2;</div><div class="line"></div><div class="line">  // 声明一个 Item 的 List</div><div class="line">  repeated Item items = 3;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">message Item &#123;</div><div class="line">  // 声明一个 string 类型的字段</div><div class="line">  string key = 1;</div><div class="line"></div><div class="line">  // 声明一个 map 类型字段</div><div class="line">  map&lt;string, string&gt; fields = 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// 指定使用哪个版本的语法,需要在第一行指定</span><br><span class="line">syntax = &quot;proto3&quot;;</span><br><span class="line"></span><br><span class="line">package example;</span><br><span class="line"></span><br><span class="line">// 指定 java_package, 不指定就使用 package.生成的类会放到该package下</span><br><span class="line">option java_package = &quot;com.example.example&quot;;</span><br><span class="line"></span><br><span class="line">// 生成的类名</span><br><span class="line">option java_outer_classname = &quot;MQMessageProtos&quot;;</span><br><span class="line"></span><br><span class="line">message MQMessage &#123;</span><br><span class="line">  // required 修饰的字段必须提供,否则 build 会抛 RuntimeException, parse 会抛 IOException. 后续扩展时 required 字段不可修改</span><br><span class="line"></span><br><span class="line">  // 声明一个枚举类型</span><br><span class="line">  enum OperationType &#123;</span><br><span class="line">    UPDATE = 0;</span><br><span class="line">    DELETE = 1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 声明一个枚举类型的字段,等号后面的数字是标识数字</span><br><span class="line">  OperationType operationType = 1;</span><br><span class="line"></span><br><span class="line">  // 声明一个 string 类型的字段</span><br><span class="line">  string name = 2;</span><br><span class="line"></span><br><span class="line">  // 声明一个 Item 的 List</span><br><span class="line">  repeated Item items = 3;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">message Item &#123;</span><br><span class="line">  // 声明一个 string 类型的字段</span><br><span class="line">  string key = 1;</span><br><span class="line"></span><br><span class="line">  // 声明一个 map 类型字段</span><br><span class="line">  map&lt;string, string&gt; fields = 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>首先指定语法版本, <em>proto2</em> 和 <em>proto3</em> 有一些差别,详细的可以参考官方文档(可能需要梯子,<a href="https://developers.google.com/protocol-buffers/docs/proto?hl=zh-cn" target="_blank" rel="external"><em>proto2</em></a>, <a href="https://developers.google.com/protocol-buffers/docs/proto3?hl=zh-cn" target="_blank" rel="external"><em>proto3</em></a>),本文中使用 <em>proto3</em>.</p>
+<li><p>首先指定语法版本, <em>proto2</em> 和 <em>proto3</em> 有一些差别,详细的可以参考官方文档(可能需要梯子,<a href="https://developers.google.com/protocol-buffers/docs/proto?hl=zh-cn" target="_blank" rel="noopener"><em>proto2</em></a>, <a href="https://developers.google.com/protocol-buffers/docs/proto3?hl=zh-cn" target="_blank" rel="noopener"><em>proto3</em></a>),本文中使用 <em>proto3</em>.</p>
 </li>
-<li>package 和 java_package 指定生成的Java类在哪个 package 下,避免命名冲突.</li>
-<li>java_outer_classname 指定生成的类名,如果不指定则会根据文件名生成,如:<br>my_proto.proto 则会生成 MyProto 类.</li>
-<li>message 是用于数据格式定义.<ul>
+<li><p>package 和 java_package 指定生成的Java类在哪个 package 下,避免命名冲突.</p>
+</li>
+<li><p>java_outer_classname 指定生成的类名,如果不指定则会根据文件名生成,如:<br>my_proto.proto 则会生成 MyProto 类.</p>
+</li>
+<li><p>message 是用于数据格式定义.</p>
+<ul>
 <li>一个 <em>.proto</em> 文件中可以定义多个 message</li>
 <li>message 中定义的字段支持 string、byte、bool、map、enum、数字类型和用户自定义的 message</li>
 <li>定义字段后面需要指定唯一的标识数字,这些数字用于识别二进制格式 message 中的字段,一旦开始使用这个 message,那么标识数字就不能改变.(数字1-15会用一个字节去编码,大于15的数字会用更多字节去编码,所以尽量把小的数字留个最常出现的字段.指定字段的标识数字时不用按照顺序来.)</li>
@@ -401,9 +406,13 @@
 </ul>
 </li>
 </ol>
-<h4 id="根据-proto-文件生成类文件"><a href="#根据-proto-文件生成类文件" class="headerlink" title="根据 .proto 文件生成类文件"></a>根据 <em>.proto</em> 文件生成类文件</h4><p>定义好 <em>.proto</em> 文件后使用 protocol buffer 编译器编译 <em>.proto</em> 文件即可.<br>需要在本地安装一下 protocol buffer 编译器,Mac os 直接使用 brew 安装即可: brew install protobuf.其他系统可参照: <a href="https://github.com/protocolbuffers/protobuf" target="_blank" rel="external">官方文档</a><br>安装好编译器后执行编译命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">protoc --java_out=./ ./mq_message.proto</div></pre></td></tr></table></figure></p>
+<h4 id="根据-proto-文件生成类文件"><a href="#根据-proto-文件生成类文件" class="headerlink" title="根据 .proto 文件生成类文件"></a>根据 <em>.proto</em> 文件生成类文件</h4><p>定义好 <em>.proto</em> 文件后使用 protocol buffer 编译器编译 <em>.proto</em> 文件即可.<br>需要在本地安装一下 protocol buffer 编译器,Mac os 直接使用 brew 安装即可: brew install protobuf.其他系统可参照: <a href="https://github.com/protocolbuffers/protobuf" target="_blank" rel="noopener">官方文档</a><br>安装好编译器后执行编译命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --java_out=./ ./mq_message.proto</span><br></pre></td></tr></table></figure>
+
 <p>–java_out 指定编译后生成的文件所在的目录,最后指定你要编译的文件.</p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>下面是根据上面的mq_message.proto文件生成的类的使用例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class TestPB &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        MQMessageProtos.Item item1 = MQMessageProtos.Item.newBuilder()</div><div class="line">                .setKey(&quot;1&quot;)</div><div class="line">                .putFields(&quot;field1&quot;, &quot;value1&quot;)</div><div class="line">                .putFields(&quot;field2&quot;, &quot;value2&quot;)</div><div class="line">                .build();</div><div class="line">        MQMessageProtos.Item item2 = MQMessageProtos.Item.newBuilder()</div><div class="line">                .setKey(&quot;2&quot;)</div><div class="line">                .putFields(&quot;field3&quot;, &quot;value3&quot;)</div><div class="line">                .putFields(&quot;field4&quot;, &quot;value4&quot;)</div><div class="line">                .build();</div><div class="line">        MQMessageProtos.MQMessage mqMessage = MQMessageProtos.MQMessage.newBuilder()</div><div class="line">                .setName(&quot;testName&quot;)</div><div class="line">                .setOperationType(MQMessageProtos.MQMessage.OperationType.UPDATE)</div><div class="line">                .addItems(item1)</div><div class="line">                .addItems(item2)</div><div class="line">                .build();</div><div class="line"></div><div class="line">        byte[] byteArray = mqMessage.toByteArray();</div><div class="line"></div><div class="line">        try &#123;</div><div class="line">            MQMessageProtos.MQMessage message = MQMessageProtos.MQMessage.parseFrom(byteArray);</div><div class="line">            System.out.println(message.getName());</div><div class="line">        &#125; catch (InvalidProtocolBufferException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>下面是根据上面的mq_message.proto文件生成的类的使用例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class TestPB &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        MQMessageProtos.Item item1 = MQMessageProtos.Item.newBuilder()</span><br><span class="line">                .setKey(&quot;1&quot;)</span><br><span class="line">                .putFields(&quot;field1&quot;, &quot;value1&quot;)</span><br><span class="line">                .putFields(&quot;field2&quot;, &quot;value2&quot;)</span><br><span class="line">                .build();</span><br><span class="line">        MQMessageProtos.Item item2 = MQMessageProtos.Item.newBuilder()</span><br><span class="line">                .setKey(&quot;2&quot;)</span><br><span class="line">                .putFields(&quot;field3&quot;, &quot;value3&quot;)</span><br><span class="line">                .putFields(&quot;field4&quot;, &quot;value4&quot;)</span><br><span class="line">                .build();</span><br><span class="line">        MQMessageProtos.MQMessage mqMessage = MQMessageProtos.MQMessage.newBuilder()</span><br><span class="line">                .setName(&quot;testName&quot;)</span><br><span class="line">                .setOperationType(MQMessageProtos.MQMessage.OperationType.UPDATE)</span><br><span class="line">                .addItems(item1)</span><br><span class="line">                .addItems(item2)</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line">        byte[] byteArray = mqMessage.toByteArray();</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            MQMessageProtos.MQMessage message = MQMessageProtos.MQMessage.parseFrom(byteArray);</span><br><span class="line">            System.out.println(message.getName());</span><br><span class="line">        &#125; catch (InvalidProtocolBufferException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -432,6 +441,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/01/点到超平面到距离公式推导/" rel="prev" title="点到超平面到距离公式推导">
+                点到超平面到距离公式推导 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -481,7 +506,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -492,9 +517,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.png"
-               alt="陈敏杰" />
+          <img class="site-author-image" itemprop="image" src="/images/default_avatar.png" alt="陈敏杰">
           <p class="site-author-name" itemprop="name">陈敏杰</p>
            
               <p class="site-description motion-element" itemprop="description">一条咸鱼(最咸的那一条)</p>
@@ -505,7 +528,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -516,7 +539,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -527,7 +550,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -582,7 +605,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2019</span>
@@ -840,6 +863,45 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+  
+
 
   
 

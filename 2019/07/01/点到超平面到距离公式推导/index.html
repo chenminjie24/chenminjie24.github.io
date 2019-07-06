@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="学习笔记,数学,">
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="一条咸鱼(最咸的那一条)">
-<meta name="keywords" content="Python,开发者,机器学习,代码,编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://chenminjie.com/tags/index.html">
+<meta name="description" content="假设要求空间中任一点$x_0$到超平面$S=w\cdot x + b$到距离。 取超平面S上任一点$x_1$，连接$x_1$,$x_0$两点得到向量$\overrightarrow { x_{ 1 }x_{ 0 } } $，则向量$\overrightarrow { x_{ 1 }x_{ 0 } } $在法向量$\overrightarrow { w } $上点投影长度即是$x_0$到超平面到距离">
+<meta name="keywords" content="学习笔记,数学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="点到超平面到距离公式推导">
+<meta property="og:url" content="http://chenminjie.com/2019/07/01/点到超平面到距离公式推导/index.html">
 <meta property="og:site_name" content="陈敏杰的博客">
-<meta property="og:description" content="一条咸鱼(最咸的那一条)">
+<meta property="og:description" content="假设要求空间中任一点$x_0$到超平面$S=w\cdot x + b$到距离。 取超平面S上任一点$x_1$，连接$x_1$,$x_0$两点得到向量$\overrightarrow { x_{ 1 }x_{ 0 } } $，则向量$\overrightarrow { x_{ 1 }x_{ 0 } } $在法向量$\overrightarrow { w } $上点投影长度即是$x_0$到超平面到距离">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-23T06:45:19.327Z">
+<meta property="og:updated_time" content="2019-07-03T12:43:37.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="一条咸鱼(最咸的那一条)">
+<meta name="twitter:title" content="点到超平面到距离公式推导">
+<meta name="twitter:description" content="假设要求空间中任一点$x_0$到超平面$S=w\cdot x + b$到距离。 取超平面S上任一点$x_1$，连接$x_1$,$x_0$两点得到向量$\overrightarrow { x_{ 1 }x_{ 0 } } $，则向量$\overrightarrow { x_{ 1 }x_{ 0 } } $在法向量$\overrightarrow { w } $上点投影长度即是$x_0$到超平面到距离">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenminjie.com/tags/">
+  <link rel="canonical" href="http://chenminjie.com/2019/07/01/点到超平面到距离公式推导/">
 
 
 
 
 
-  <title>tags | 陈敏杰的博客</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>点到超平面到距离公式推导 | 陈敏杰的博客</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -261,40 +261,189 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenminjie.com/2019/07/01/点到超平面到距离公式推导/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈敏杰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈敏杰的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 3 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Jave/" style="font-size: 12px; color: #ccc">Jave</a> <a href="/tags/学习笔记/" style="font-size: 30px; color: #111">学习笔记</a> <a href="/tags/数学/" style="font-size: 21px; color: #6f6f6f">数学</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">点到超平面到距离公式推导</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-01T21:43:57+08:00">
+                2019-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂项/" itemprop="url" rel="index">
+                    <span itemprop="name">杂项</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/07/01/点到超平面到距离公式推导/" class="leancloud_visitors" data-flag-title="点到超平面到距离公式推导">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>假设要求空间中任一点$x_0$到超平面$S=w\cdot x + b$到距离。</p>
+<p>取超平面S上任一点$x_1$，连接$x_1$,$x_0$两点得到向量$\overrightarrow { x_{ 1 }x_{ 0 } } $，则向量$\overrightarrow { x_{ 1 }x_{ 0 } } $在法向量$\overrightarrow { w } $上点投影长度即是$x_0$到超平面到距离d。</p>
+<p>假设$x_0$的坐标为$（x_0^0，x_0^1，\cdots ,x_0^n）$，$x_1$的坐标为$（x_1^0，x_1^1, \cdots ，x_1^n）$，则向量$\overrightarrow { x_{ 1 }x_{ 0 } } $表示为$（(x_{ 0 }^{ 0 }-x_{ 1 }^{ 0 }), (x_{ 0 }^{ 1 }-x_{ 1 }^{ 1 }), \cdots , (x_{ 0 }^{ n }-x_{ 1 }^{ n })）$。</p>
+<p>$\frac { \overrightarrow { w }  }{ \left|\left| \overrightarrow { w }  \right|\right|  } $表示法向量方向上到单位向量，然后用该向量和$\overrightarrow { x_{ 1 }x_{ 0 } } $做内积即可得到$\overrightarrow { x_{ 1 }x_{ 0 } } $在法向量方向上长度即距离d.</p>
+<p>$$\frac { \overrightarrow { w }  }{ \left|\left| \overrightarrow { w }  \right|\right|  } \cdot \overrightarrow { x_{ 1 }x_{ 0 } } =\frac { w_{ 0 }\times (x_{ 0 }^{ 0 }-x_{ 1 }^{ 0 })+w_{ 1 }\times (x_{ 0 }^{ 1 }-x_{ 1 }^{ 1 })+\cdots +w_{ n }\times (x_{ 0 }^{ n }-x_{ 1 }^{ n }) }{ \sqrt { w_{ 0 }^{ 2 }+w_{ 1 }^{ 2 }+\cdots +w_{ n }^{ 2 } }  } =\frac { (w_{ 0 }x_{ 0 }^{ 0 }+w_{ 1 }x_{ 0 }^{ 1 }+\cdots +w_{ n }x_{ 0 }^{ n })-(w_{ 0 }x_{ 1 }^{ 0 }+w_{ 1 }x_{ 1 }^{ 1 }+\cdots +w_{ n }x_{ 1 }^{ n }) }{ \sqrt { w_{ 0 }^{ 2 }+w_{ 1 }^{ 2 }+\cdots +w_{ n }^{ 2 } }  } $$</p>
+<p>因为$x_1$点在平面S上，所以$0=w\cdot x1 + b$即$b=-w\cdot x_1=-(w_{ 0 }x_{ 1 }^{ 0 }+w_{ 1 }x_{ 1 }^{ 1 }+\cdots +w_{ n }x_{ 1 }^{ n })$，带入上式中得到$$\frac { (w_{ 0 }x_{ 0 }^{ 0 }+w_{ 1 }x_{ 0 }^{ 1 }+\cdots +w_{ n }x_{ 0 }^{ n })+b }{ \sqrt { w_{ 0 }^{ 2 }+w_{ 1 }^{ 2 }+\cdots +w_{ n }^{ 2 } }  }=\frac { w\cdot x_{ 0 }+b }{ \left|\left| \overrightarrow { w }  \right|\right|  }  $$</p>
+<p>由于我们求的是距离，不关心正负，所以取绝对值即可：$$\frac { \left| w\cdot x_{ 0 }+b \right|  }{ \left|\left| \overrightarrow { w }  \right|\right|  } $$</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/19/Protocol-Buffer入门指北/" rel="next" title="Protocol Buffer入门指北">
+                <i class="fa fa-chevron-left"></i> Protocol Buffer入门指北
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/05/感知机/" rel="prev" title="感知机">
+                感知机 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -501,10 +650,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
