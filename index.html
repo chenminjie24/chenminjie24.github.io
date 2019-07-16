@@ -393,6 +393,7 @@
 <h3 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h3><blockquote>
 <p>输入：训练数据集T={$(x_1,y_1),(x_2,y_2),\cdots ,(x_N,y_N)$}，其中$x_{ i }\in X= R^{ n }$，$y_{ i }\in Y={ -1,+1} $，i=1,2,3,…,N；学习率$\eta (0&lt;\eta \le 1)$;<br>输出：w，b；感知机模型$f(x)=sign(w\cdot x+b)$。<br>（1）选取初值$w_0b_0$<br>（2）在训练集中选取数据($x_i,y_i$)<br>（3）如果$y_{ i }(w\cdot x_{ i }+b)\le 0$，则$$w\leftarrow w+\eta y_{ i }x_{ i }$$ $$b\leftarrow b+\eta y_{ i }$$<br>（4）转至（2），直至训练集中没有误分类点。<br>这种学习算法直观上有如下解释：当一个实例点被误分类，即位于分离超平面当错误一侧时，则调整w，b当值，使分离超平面向该误分类点的一侧移动，以减少该误分类点与超平面间点距离，直至超平面越过该误分类点使其被正确分类。</p>
 </blockquote>
+<p><a href="https://github.com/chenminjie24/SLM/blob/master/%E6%84%9F%E7%9F%A5%E6%9C%BA.ipynb" target="_blank" rel="noopener">感知机算法的Python实现</a></p>
 
           
         
