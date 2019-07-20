@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="数学,学习笔记,《统计学习方法》,">
 
 
 
@@ -94,17 +94,18 @@
 
 
 
-<meta name="description" content="一条咸鱼(最咸的那一条)">
-<meta name="keywords" content="Python,开发者,机器学习,代码,编程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈敏杰的博客">
-<meta property="og:url" content="http://chenminjie.com/archives/2018/12/index.html">
+<meta name="description" content="k近邻法（k-nearest neighbor，k-NN）是一种基本分类与回归方法。书中只讨论了分类问题中的k近邻法。">
+<meta name="keywords" content="数学,学习笔记,《统计学习方法》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="k近邻法">
+<meta property="og:url" content="http://chenminjie.com/2019/07/16/k近邻法/index.html">
 <meta property="og:site_name" content="陈敏杰的博客">
-<meta property="og:description" content="一条咸鱼(最咸的那一条)">
+<meta property="og:description" content="k近邻法（k-nearest neighbor，k-NN）是一种基本分类与回归方法。书中只讨论了分类问题中的k近邻法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-20T08:00:38.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈敏杰的博客">
-<meta name="twitter:description" content="一条咸鱼(最咸的那一条)">
+<meta name="twitter:title" content="k近邻法">
+<meta name="twitter:description" content="k近邻法（k-nearest neighbor，k-NN）是一种基本分类与回归方法。书中只讨论了分类问题中的k近邻法。">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chenminjie.com/archives/2018/12/">
+  <link rel="canonical" href="http://chenminjie.com/2019/07/16/k近邻法/">
 
 
 
 
 
-  <title>归档 | 陈敏杰的博客</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>k近邻法 | 陈敏杰的博客</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -164,7 +165,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  page-archive  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,72 +259,203 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 4 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenminjie.com/2019/07/16/k近邻法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈敏杰">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈敏杰的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/19/Protocol-Buffer入门指北/" itemprop="url">
-              
-                <span itemprop="name">Protocol Buffer入门指北</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">k近邻法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-19T19:11:54+08:00" content="2018-12-19">
-          12-19
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-16T21:17:55+08:00">
+                2019-07-16
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/07/16/k近邻法/" class="leancloud_visitors" data-flag-title="k近邻法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>k近邻法（k-nearest neighbor，k-NN）是一种基本分类与回归方法。书中只讨论了分类问题中的k近邻法。</p>
+<a id="more"></a>
+<p>k近邻法用较为通俗的语言描述为：根据距离x最近的k个点的类别来将x进行分类。</p>
+<p>可以从上面描述中看出k近邻法的几个关键因素：</p>
+<ul>
+<li>距离：怎么定义点与点的距离</li>
+<li>k：最近的k个点，k的值如何确定</li>
+<li>分类：怎么根据附近点的类别情况进行分类，分类规则是什么</li>
+</ul>
+<p>先给出书中的定义，再来看这几个关键因素。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<p>输入：训练数据集$$T={ (x_{ 1 },y_{ 1 }),(x_{ 2 },y_{ 2 }),\cdots ,(x_{ N },y_{ N })} $$ 其中$x_i \in X \subseteq R^n$为实例的特征向量，$y_i \in Y \subseteq { c_1, c_2, \cdots, c_K} $为实例的类别, $i=1,2,\cdots ,N$;实例特征向量x；<br>输出：实例x所属的类y。</p>
+<ul>
+<li>根据给定的距离度量，在训练集T中找出与x最邻近的k个点，涵盖这k个点的x的邻域记作$N_{ k }(x)$;</li>
+<li>在$N_{ k }(x)$中根据分类决策规则（如多数表决）决定x的类别y：$$y=arg\max _{ c_j }{ \quad I(y_i=c_j), } \quad i=1,2,\cdots ,N;\quad j=1,2,\cdots ,K$$I为指示函数，即当$y_i=c_j$时I为1，否则I为0。</li>
+</ul>
+</blockquote>
+<h3 id="距离度量"><a href="#距离度量" class="headerlink" title="距离度量"></a>距离度量</h3><p>k近邻法的特征空间一般是n维实数空间$R^n$，使用的距离是欧式距离，但也可以用其他距离，选择不同距离计算出但结果可能是不同但。</p>
+<h3 id="k值的选择"><a href="#k值的选择" class="headerlink" title="k值的选择"></a>k值的选择</h3><p>k值的选择会对k近邻法对结果产生重大影响。<br>k值若选择较小，则会对近邻点非常敏感，容易过拟合。<br>k值若选择较大，学习对近似误差会增大，模型较简单。</p>
+<h3 id="分类决策规则"><a href="#分类决策规则" class="headerlink" title="分类决策规则"></a>分类决策规则</h3><p>k近邻法对分类规则往往是多数表决，即由k个近邻对训练实例中对多数类决定输入类对实例。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/《统计学习方法》/" rel="tag"># 《统计学习方法》</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/05/感知机/" rel="next" title="感知机">
+                <i class="fa fa-chevron-left"></i> 感知机
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -331,6 +463,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -351,8 +487,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/default_avatar.png" alt="陈敏杰">
           <p class="site-author-name" itemprop="name">陈敏杰</p>
@@ -412,6 +557,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离度量"><span class="nav-number">2.</span> <span class="nav-text">距离度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k值的选择"><span class="nav-number">3.</span> <span class="nav-text">k值的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类决策规则"><span class="nav-number">4.</span> <span class="nav-text">分类决策规则</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -525,11 +686,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
 
   
